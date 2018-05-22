@@ -1,0 +1,44 @@
+.table{
+  width: 100%;
+  border: 1px solid lightgray;
+  overflow: auto;
+
+  .table-head{
+    font-weight: 500;
+    display: flex;
+    border-bottom: 2px solid #c0c0c0;
+    background: #eeeeee;
+    position: sticky;
+    top: 0;
+
+    .table-head-column{
+      display: inline-block;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .table-head-column:not(:first-child){
+      border-left: 1px solid lightgray;
+    }
+  }
+
+  .table-body{
+    .table-body-row{
+      display: flex;
+
+      &:nth-child(even){
+        background: #f7f7f7;
+      }
+
+      .table-body-column{
+        display: inline-block;
+        padding: 10px;
+        word-wrap: break-all;
+      }
+
+      .table-body-column:not(:first-child){
+        border-left: 1px solid lightgray;
+      }
+    }
+  }
+}
