@@ -9,15 +9,15 @@
   <link rel="stylesheet" href="./app.css" />
   <link rel="stylesheet/less" type="text/css" href="./src/angular-table.less" />
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.6/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.0/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.7.0/angular-sanitize.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.0.4/less.min.js"></script>
 </head>
 
 <body ng-controller="MainController as $ctrl">
 
   <angular-table
-    meta-data='$ctrl.tableMetaData'
-    data='$ctrl.data'>
+    meta-data='$ctrl.tableMetaData'>
   </angular-table>
 
   <script src="./data.js"></script>

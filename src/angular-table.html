@@ -1,14 +1,21 @@
 <div class="table">
   <div class="table-head">
-    <div class="table-head-column" ng-repeat="column in $ctrl.metaData.columns" ng-style="{ width: column.width}">
+    <div class="table-head-column"
+      ng-repeat="column in $ctrl.metaData.columns"
+      ng-style="{ width: column.width}">
       {{column.title}}
     </div>
   </div>
 
   <div class="table-body">
-    <div class="table-body-row" ng-repeat="row in $ctrl.data">
-      <div class="table-body-column" ng-repeat="column in $ctrl.metaData.columns" ng-style="{ width: column.width}">
-        {{row[column.key]}}
+    <div class="table-body-row" ng-repeat="row in $ctrl.metaData.datasource">
+      <div class="table-body-column"
+        ng-repeat="column in $ctrl.metaData.columns"
+        ng-style="{ width: column.width}">
+
+        <span ng-if="column.key && !column.template">{{row[column.key]}}</span>
+        <span ng-if="column.template" ng-bind-html="$ctrl.interpolate(column.template, row)"></span>
+
       </div>
     </div>
   </div>

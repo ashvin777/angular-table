@@ -6,6 +6,7 @@ angular.element(document).ready(function () {
 });
 
 function MainController() {
+
   this.tableMetaData = {
     columns: [{
       title: 'Name',
@@ -14,17 +15,21 @@ function MainController() {
     }, {
       title: 'Age',
       key: 'age',
-      width: '20%'
+      width: '10%'
     }, {
-      title: 'Mobile',
+      title: 'Phone',
       key: 'phone',
-      width: '25%'
+      width: '20%'
     }, {
       title: 'Email',
       key: 'email',
-      width: '30%'
-    }]
+      width: '20%'
+    }, {
+      title: 'Company',
+      width: '20%',
+      key: 'company',
+      template: '<i>{{ company }}</i>'
+    }],
+    datasource: data
   };
-
-  this.data = data;
 }
