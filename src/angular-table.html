@@ -1,14 +1,16 @@
-<div class="table">
+<div class="table" ui-scroll-viewport>
+
   <div class="table-head">
     <div class="table-head-column"
       ng-repeat="column in $ctrl.metaData.columns"
       ng-style="{ width: column.width}">
-      {{column.title}}
+      <span ng-if="column.title">{{column.title}}</span>
+      <span ng-if="column.titleTemplate" ng-bind-html="$ctrl.interpolate(column.titleTemplate, column)"></span>
     </div>
   </div>
 
   <div class="table-body">
-    <div class="table-body-row" ng-repeat="row in $ctrl.metaData.datasource">
+    <div class="table-body-row" ui-scroll="row in $ctrl.datasource">
       <div class="table-body-column"
         ng-repeat="column in $ctrl.metaData.columns"
         ng-style="{ width: column.width}">

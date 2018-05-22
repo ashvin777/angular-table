@@ -9,6 +9,9 @@ function MainController() {
 
   this.tableMetaData = {
     columns: [{
+      titleTemplate: 'Checkbox',
+      width: '100px'
+    }, {
       title: 'Name',
       key: 'name',
       width: '25%'
@@ -28,8 +31,10 @@ function MainController() {
       title: 'Company',
       width: '20%',
       key: 'company',
-      template: '<i>{{ company }}</i>'
+      template: `<i>{{ company }}</i>`
     }],
-    datasource: data
+    datasource: (index, count, success) => {
+      success(data);
+    }
   };
 }
