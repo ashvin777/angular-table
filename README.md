@@ -15,7 +15,7 @@ This is anuglar table ui component can be used to draw basic table.
 # Usage
 
 Template
-```
+```html
 <angular-table
   controller="$ctrl",
   adapter="$ctrl.tableAdapter"
@@ -23,7 +23,7 @@ Template
 </angular-table>
 ```
 
-```
+```js
 //data.js file
 var data = [
   {
