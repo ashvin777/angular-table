@@ -1,0 +1,25 @@
+{
+  "name": "angular-table",
+  "description": "A angular based table component",
+  "main": "app.js",
+  "authors": [
+    "Ashvin Suthar <Ashvin.Suthar@Foghorn.io>"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "angular-table",
+    "angularjs-table",
+    "angularjs",
+    "table",
+    "ui-table",
+    "ngtable"
+  ],
+  "homepage": "https://github.com/ashvin777/angular-table",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

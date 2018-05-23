@@ -8,6 +8,7 @@
 
   <link rel="stylesheet" href="./app.css" />
   <link rel="stylesheet/less" type="text/css" href="./src/angular-table.less" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.0/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.7.0/angular-sanitize.min.js"></script>
@@ -18,9 +19,14 @@
 <body ng-controller="MainController as $ctrl">
 
   <angular-table
+    controller="$ctrl",
+    adapter="$ctrl.tableAdapter"
     meta-data='$ctrl.tableMetaData'>
   </angular-table>
 
+  <ul>
+    <li ng-repeat="item in $ctrl.selected">{{item}}</li>
+  </ul>
   <script src="./data.js"></script>
   <script src="./src/angular-table.js"></script>
   <script src="./app.js"></script>

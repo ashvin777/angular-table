@@ -1,24 +1,48 @@
 <div class="table" ui-scroll-viewport>
 
+  <script type="text/ng-template" id="template">
+    <div angular-table-compile ng-bind-html="$ctrl.getTrustedHtml(column.template)"></div>
+  </script>
+
+  <script type="text/ng-template" id="title-template">
+    <div angular-table-compile ng-bind-html="$ctrl.getTrustedHtml(column.titleTemplate)"></div>
+  </script>
+
   <div class="table-head">
     <div class="table-head-column"
       ng-repeat="column in $ctrl.metaData.columns"
+      ng-click="$ctrl.sort(column)"
       ng-style="{ width: column.width}">
-      <span ng-if="column.title">{{column.title}}</span>
-      <span ng-if="column.titleTemplate" ng-bind-html="$ctrl.interpolate(column.titleTemplate, column)"></span>
+
+      <span ng-if="column.title">
+        {{column.title}}
+      </span>
+
+      <span ng-if="column.key">
+        <i class="fa fa-sort" ng-if="$ctrl.sortBy.title !== column.title"></i>
+        <i class="fa fa-sort-up" ng-if="$ctrl.sortBy.title === column.title && $ctrl.sortOrder === 'asc'"></i>
+        <i class="fa fa-sort-down" ng-if="$ctrl.sortBy.title === column.title && $ctrl.sortOrder === 'desc'"></i>
+      </span>
+
+      <span ng-if="column.titleTemplate" ng-include="'title-template'" ></span>
     </div>
   </div>
 
   <div class="table-body">
-    <div class="table-body-row" ui-scroll="row in $ctrl.datasource">
+    <div class="table-body-row"
+      ui-scroll="row in $ctrl.datasource"
+      start-index="0"
+      adapter="$ctrl.adapter">
+
       <div class="table-body-column"
         ng-repeat="column in $ctrl.metaData.columns"
         ng-style="{ width: column.width}">
 
         <span ng-if="column.key && !column.template">{{row[column.key]}}</span>
-        <span ng-if="column.template" ng-bind-html="$ctrl.interpolate(column.template, row)"></span>
+        <span ng-if="column.template" ng-include="'template'"></span>
 
       </div>
     </div>
   </div>
+
 </div>

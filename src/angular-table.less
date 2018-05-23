@@ -15,6 +15,21 @@
       display: inline-block;
       padding: 10px;
       cursor: pointer;
+
+      i{
+        float: right;
+      }
+
+      .fa-sort{
+        color: gray;
+        display: none;
+      }
+
+      &:hover{
+        .fa-sort{
+          display: inline-block;
+        }
+      }
     }
 
     .table-head-column:not(:first-child){
@@ -26,7 +41,7 @@
     .table-body-row{
       display: flex;
 
-      &:nth-child(even){
+      &:nth-child(odd){
         background: #f7f7f7;
       }
 
