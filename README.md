@@ -1,10 +1,10 @@
-# Angular Table -
-This is anuglar table ui component can be used to draw basic table.
+# Angular Table
+An angular based table component
 
 # Demo
 [https://ashvin777.github.io/angular-table/]https://ashvin777.github.io/angular-table/
 
-# Supported Features -
+# Supported Features
 
 1. Column Sorting
 2. Pagination - Infinite Scrolling
